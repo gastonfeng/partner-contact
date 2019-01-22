@@ -18,17 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from openerp.osv.orm import Model
-from openerp.osv import fields
+from odoo import models, fields
 
 
-class Partner(Model):
+class Partner(models.Model):
     _inherit = 'res.partner'
-    _columns = {
-        'continent_id': fields.related('country_id', 'continent_id',
-                                       type='many2one',
-                                       relation='res.continent',
-                                       string='Continent',
-                                       readonly=True, store=True),
-    }
+    continent_id = fields.Many2one(related='country_id.continent_id', type='many2one', relation='res.continent',
+                                   string='Continent', readonly=True, store=True)
