@@ -24,4 +24,4 @@ from openerp.osv import orm
 
 class res_partner(orm.Model):
     _inherit = 'res.partner'
-    _defaults = {'user_id': lambda self, cr, uid, context: uid}
+    _defaults = {'user_id': lambda self,  context: uid}

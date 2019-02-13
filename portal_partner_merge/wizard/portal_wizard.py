@@ -26,9 +26,9 @@ from openerp.tools.translate import _
 class wizard_user(orm.TransientModel):
     _inherit = 'portal.wizard.user'
 
-    def get_error_messages(self, cr, uid, ids, context=None):
+    def get_error_messages(self,  ids, context=None):
         error_msg = super(wizard_user, self
-                          ).get_error_messages(cr, uid, ids, context=context)
+                          ).get_error_messages( ids, context=context)
         if error_msg:
             error_msg[-1] = '%s\n%s' % (
                 error_msg[-1],

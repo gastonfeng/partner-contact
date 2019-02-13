@@ -13,12 +13,12 @@ class test_display_name(common.TransactionCase):
     def test_00_create_res_partner(self):
         """ Test if the display name has been correctly set """
         cr, uid = self.cr, self.uid
-        partner_id = self.res_partner.create(cr, uid, {
+        partner_id = self.res_partner.create( {
             'lastname': 'Lastname',
             'firstname': 'Firstname',
             'is_company': True,
         })
-        partner_records = self.res_partner.browse(cr, uid, [partner_id])
+        partner_records = self.res_partner.browse( [partner_id])
         p1 = partner_records[0]
         self.assertEqual(
             p1.display_name,
@@ -29,14 +29,14 @@ class test_display_name(common.TransactionCase):
     def test_01_res_partner_write_lastname(self):
         """ Test if the display name has been correctly set """
         cr, uid = self.cr, self.uid
-        partner_id = self.res_partner.create(cr, uid, {
+        partner_id = self.res_partner.create( {
             'lastname': 'Lastname',
             'firstname': 'Firstname',
             'is_company': True
         })
-        partner_records = self.res_partner.browse(cr, uid, [partner_id])
+        partner_records = self.res_partner.browse( [partner_id])
         p1 = partner_records[0]
-        self.res_partner.write(cr, uid, partner_id, {'lastname': 'Last'})
+        self.res_partner.write( partner_id, {'lastname': 'Last'})
         self.assertEqual(
             p1.display_name,
             'Last Firstname',

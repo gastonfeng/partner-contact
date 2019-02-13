@@ -24,10 +24,10 @@ from openerp.osv import orm, fields
 class ResPartner(orm.Model):
     _inherit = 'res.partner'
 
-    def _display_name_compute(self, cr, uid, ids, name, args, context=None):
-        return dict(self.name_get(cr, uid, ids, context=context))
+    def _display_name_compute(self,  ids, name, args, context=None):
+        return dict(self.name_get( ids, context=context))
 
-    def name_get(self, cr, uid, ids, context=None):
+    def name_get(self,  ids, context=None):
         """ By pass of name_get to use directly firstname and lastname
         as we cannot ensure name as already been computed when calling this
         method for display_name"""
@@ -36,14 +36,14 @@ class ResPartner(orm.Model):
         if isinstance(ids, (int, long)):
             ids = [ids]
         res = []
-        for record in self.browse(cr, uid, ids, context=context):
+        for record in self.browse( ids, context=context):
             names = (record.lastname, record.firstname)
             name = u" ".join([s for s in names if s])
             if record.parent_id and not record.is_company:
                 name = "%s, %s" % (record.parent_id.name, name)
             if context.get('show_address'):
                 name = name + "\n" + self._display_address(
-                    cr, uid, record, without_company=True, context=context
+                     record, without_company=True, context=context
                 )
                 name = name.replace('\n\n', '\n')
                 name = name.replace('\n\n', '\n')
@@ -54,8 +54,8 @@ class ResPartner(orm.Model):
 
     _display_name_store_triggers = {
         'res.partner': (
-            lambda self, cr, uid, ids, context=None:
-            self.search(cr, uid, [
+            lambda self,  ids, context=None:
+            self.search( [
                 ('id', 'child_of', ids)
                 ]),
             ['parent_id', 'is_company', 'name', 'firstname', 'lastname'],
