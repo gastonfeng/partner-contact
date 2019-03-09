@@ -4,8 +4,9 @@
 # Copyright 2015 Antiun Ingenieria S.L. - Antonio Espinosa
 # Copyright 2017 Tecnativa - Pedro M. Baeza
 
-from odoo import api, fields, models
 from odoo.addons.partner_firstname import exceptions
+
+from odoo import api, fields, models
 
 
 class ResPartner(models.Model):

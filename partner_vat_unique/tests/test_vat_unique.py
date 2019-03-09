@@ -1,8 +1,8 @@
 # Copyright 2017 Grant Thornton Spain - Ismael Calvo <ismael.calvo@es.gt.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo.tests.common import SavepointCase
 from odoo.exceptions import ValidationError
+from odoo.tests.common import SavepointCase
 
 
 class TestVatUnique(SavepointCase):

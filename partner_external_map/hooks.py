@@ -3,9 +3,9 @@
 # © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, SUPERUSER_ID
 import logging
 
+from odoo import api, SUPERUSER_ID
 
 logger = logging.getLogger(__name__)
 

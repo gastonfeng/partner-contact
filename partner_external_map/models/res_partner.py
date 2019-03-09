@@ -3,10 +3,10 @@
 # © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, api, _
-from odoo.exceptions import UserError
 import logging
 
+from odoo import models, api, _
+from odoo.exceptions import UserError
 
 logger = logging.getLogger(__name__)
 

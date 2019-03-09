@@ -2,8 +2,8 @@
 # © 2016 Pedro M. Baeza <pedro.baeza@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests import common
 from odoo.exceptions import UserError
+from odoo.tests import common
 from ..hooks import set_default_map_settings
 
 
