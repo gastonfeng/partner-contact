@@ -10,7 +10,6 @@ from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 from odoo.tools import drop_view_if_exists
 
-
 _logger = logging.getLogger(__name__)
 
 

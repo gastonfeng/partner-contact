@@ -4,13 +4,15 @@
 # Copyright 2017 David Vidal <jairo.llopis@tecnativa.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
+import logging
+import re
+from collections import OrderedDict
+
+import requests
+from lxml import etree
+
 from odoo import _, api, models
 from odoo.exceptions import UserError
-import requests
-import re
-import logging
-from lxml import etree
-from collections import OrderedDict
 
 logger = logging.getLogger(__name__)
 

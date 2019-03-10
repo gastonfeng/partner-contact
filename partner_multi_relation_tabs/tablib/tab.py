@@ -1,11 +1,11 @@
 # Copyright 2014-2018 Therp BV <https://therp.nl>.
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 import logging
+
 from lxml import etree
 
 from odoo import _
 from odoo.osv.orm import transfer_modifiers_to_node
-
 
 _logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 

@@ -1,8 +1,8 @@
 # Copyright 2017 David Vidal <david.vidal@tecnativa.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests import common
 from odoo.exceptions import UserError
+from odoo.tests import common
 
 
 class TestBaseLocationNuts(common.SavepointCase):

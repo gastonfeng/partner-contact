@@ -7,15 +7,17 @@
 #                <contact@eficent.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
+import csv
+import io
+import logging
+import os
+import tempfile
+import zipfile
+
+import requests
+
 from odoo import _, api, fields, models, tools
 from odoo.exceptions import UserError
-import requests
-import tempfile
-import io
-import zipfile
-import os
-import logging
-import csv
 
 logger = logging.getLogger(__name__)
 

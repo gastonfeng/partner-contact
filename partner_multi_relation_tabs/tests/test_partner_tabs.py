@@ -3,7 +3,6 @@
 from lxml import etree
 
 from odoo.exceptions import ValidationError
-
 from . import common
 from ..tablib import Tab
 
